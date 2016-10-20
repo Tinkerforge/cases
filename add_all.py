@@ -10,8 +10,7 @@ for project in projects:
         files = os.listdir(project)
         print files
         for file in files:
-            splitfile = file.split(".")
-            if len(splitfile) > 0 and splitfile[1] in files_to_add:
+            if file.endswith('.fcstd') or file.endswith('.rld'):
                 print "add " + file
                 os.system("git add " + project + "/" + file)
 
